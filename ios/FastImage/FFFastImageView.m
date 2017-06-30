@@ -2,6 +2,20 @@
 
 @implementation FFFastImageView
 
+- (void)setIOSRefreshCached:(BOOL)iOSRefreshCached
+{
+    if (_iOSRefreshCached != iOSRefreshCached) {
+        _iOSRefreshCached = iOSRefreshCached;
+    }
+}
+
+- (void)setIOSProgressiveDownload:(BOOL)iOSProgressiveDownload
+{
+    if (_iOSProgressiveDownload != iOSProgressiveDownload) {
+        _iOSProgressiveDownload = iOSProgressiveDownload;
+    }
+}
+
 - (void)setResizeMode:(RCTResizeMode)resizeMode
 {
     if (_resizeMode != resizeMode) {
@@ -32,7 +46,15 @@
                 options |= SDWebImageHighPriority;
                 break;
         }
-
+/*
+        if (_iOSRefreshCached) {
+            options |= SDWebImageRefreshCached;
+        }
+        
+        if (_iOSProgressiveDownload) {
+            options |= SDWebImageProgressiveDownload;
+        }*/
+        
         // Load the new source.
         [self sd_setImageWithURL:source.uri
                 placeholderImage:nil

@@ -15,5 +15,7 @@
 @property(nonatomic, copy) RCTDirectEventBlock onFastImageLoad;
 @property(nonatomic, assign) RCTResizeMode resizeMode;
 @property(nonatomic, strong) FFFastImageSource *source;
+@property(nonatomic, assign) BOOL iOSRefreshCached;
+@property(nonatomic, assign) BOOL iOSProgressiveDownload;
 
 @end

@@ -37,6 +37,8 @@ class FastImage extends Component {
         ref={e => (this._root = e)}
         {...props}
         source={resolvedSource}
+        iOSIgnoreCachedResponse={true}
+        iOSProgressiveDownload={false}
         onFastImageError={onError}
         onFastImageLoad={onLoad}
       />
@@ -61,6 +63,10 @@ FastImage.preload = sources => {
   FastImageViewNativeModule.preload(sources)
 }
 
+FastImage.clear = () => {
+  FastImageViewNativeModule.clear()
+}
+
 const FastImageSourcePropType = PropTypes.shape({
   uri: PropTypes.string,
   headers: PropTypes.objectOf(PropTypes.string),
@@ -70,12 +76,16 @@ const FastImageSourcePropType = PropTypes.shape({
 FastImage.propTypes = {
   ...View.propTypes,
   source: FastImageSourcePropType,
+  iOSRefreshCached: PropTypes.bool,
+  iOSProgressiveDownload: PropTypes.bool,
   onFastImageError: PropTypes.func,
   onFastImageLoad: PropTypes.func,
 }
 
 FastImage.defaultProps = {
   resizeMode: FastImage.resizeMode.cover,
+  iOSRefreshCached: false,
+  iOSProgressiveDownload: false,
   onLoad: Function.prototype,
   onError: Function.prototype,
 }
