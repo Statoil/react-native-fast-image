@@ -234,8 +234,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Vendor/SDWebImage",
-					"$(SRCROOT)/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage",
+					"$(inherited)",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -247,8 +247,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Vendor/SDWebImage",
-					"$(SRCROOT)/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage",
+					"$(inherited)",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
