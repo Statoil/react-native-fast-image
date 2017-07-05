@@ -37,8 +37,6 @@ class FastImage extends Component {
         ref={e => (this._root = e)}
         {...props}
         source={resolvedSource}
-        iOSIgnoreCachedResponse={true}
-        iOSProgressiveDownload={false}
         onFastImageError={onError}
         onFastImageLoad={onLoad}
       />
@@ -84,7 +82,7 @@ FastImage.propTypes = {
 
 FastImage.defaultProps = {
   resizeMode: FastImage.resizeMode.cover,
-  iOSRefreshCached: false,
+  iOSRefreshCached: true,
   iOSProgressiveDownload: false,
   onLoad: Function.prototype,
   onError: Function.prototype,
